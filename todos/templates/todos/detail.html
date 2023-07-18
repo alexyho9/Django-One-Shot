@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List</title>
+    <title>Detail</title>
 </head>
 <body>
     <main>
         <div>
-            <h1>My Lists</h1>
+            <h1>{{ todo_list_detail.name }}</h1>
             <table>
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Number of items</th>
+                        <th>Task</th>
+                        <th>Due Date</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for todo_list in todo_list_list.all %}
+                    {% for todo_item in todo_list_detail.items.all %}
                     <tr>
-                        <td><a href="{% url 'todo_list_detail' todo_list.id %}">{{ todo_list.name }}</a></td>
-                        <td>{{ todo_list.items.count }}</td>
+                        <td>{{ todo_item.task }}</td>
+                        <td>{{ todo_item.due_date }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
