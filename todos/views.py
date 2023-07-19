@@ -50,3 +50,11 @@ def update_todo_list(request, id):
         "todo_form": form,
     }
     return render(request, "todos/update.html", context)
+
+
+def delete_todo_list(request, id):
+    tasks = get_object_or_404(TodoList, id=id)
+    if request.method == "POST":
+        tasks.delete()
+        return redirect("todo_list_list")
+    return render(request, "todos/delete.html")

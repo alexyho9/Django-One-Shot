@@ -9,9 +9,10 @@
     <main>
         <div>
             <h1>{{ todo_list_detail.name }}</h1>
-            <p>
-                <a href="{% url 'update_todo_list' todo_list_detail.id %}">Update Task</a>
-            </p>
+            <ul>
+                <li><a href="{% url 'update_todo_list' todo_list_detail.id %}">Update Task</a></li>
+                <li><a href="{% url 'delete_todo_list' todo_list_detail.id %}">Delete Task</a></li>
+            </ul>
             <table>
                 <thead>
                     <tr>
@@ -31,7 +32,9 @@
         </div>
     </main>
     <footer>
-        <a href="{% url 'todo_list_list' %}">Return to Task List</a>
+        <ul>
+            <li><a href="{% url 'todo_list_list' %}">Return to Task List</a></li>
+        </ul>
     </footer>
 </body>
 </html>

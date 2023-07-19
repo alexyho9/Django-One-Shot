@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>Confirm Delete</h1>
+            <form method="post">
+                {% csrf_token %}
+                <button>Delete</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <a href="{% url 'todo_list_list' %}">Return to Task List</a>
+    </footer>
+</body>
+</html>
