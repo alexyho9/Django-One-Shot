@@ -20,7 +20,7 @@ def todo_list_detail(request, id):
     return render(request, "todos/detail.html", context)
 
 
-def create_todo_list(request):
+def todo_list_create(request):
     if request.method == "POST":
         form = TodoListForm(request.POST)
         if form.is_valid():
@@ -35,7 +35,7 @@ def create_todo_list(request):
     return render(request, "todos/create.html", context)
 
 
-def update_todo_list(request, id):
+def todo_list_update(request, id):
     tasks = get_object_or_404(TodoList, id=id)
     if request.method == "POST":
         form = TodoListForm(request.POST, instance=tasks)
@@ -52,7 +52,7 @@ def update_todo_list(request, id):
     return render(request, "todos/update.html", context)
 
 
-def delete_todo_list(request, id):
+def todo_list_delete(request, id):
     tasks = get_object_or_404(TodoList, id=id)
     if request.method == "POST":
         tasks.delete()
@@ -60,7 +60,7 @@ def delete_todo_list(request, id):
     return render(request, "todos/delete.html")
 
 
-def create_todo_item(request):
+def todo_item_create(request):
     if request.method == "POST":
         form = TodoItemForm(request.POST)
         if form.is_valid():
@@ -75,7 +75,7 @@ def create_todo_item(request):
     return render(request, "todos/item_create.html", context)
 
 
-def update_todo_item(request, id):
+def todo_item_update(request, id):
     item = get_object_or_404(TodoItem, id=id)
     if request.method == "POST":
         form = TodoItemForm(request.POST, instance=item)
