@@ -9,7 +9,10 @@
     <main>
         <div>
             <h1>My Lists</h1>
-            <p><a href="{% url 'create_todo_list' %}">Create a New To-Do List</a></p>
+            <ul>
+                <li><a href="{% url 'create_todo_list' %}">Create New List</a></li>
+                <li><a href="{% url 'create_todo_item' %}">Create New Item</a></li>
+            </ul>
             <table>
                 <thead>
                     <tr>
